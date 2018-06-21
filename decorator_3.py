@@ -4,21 +4,7 @@
 #　　一个python函数也可以被多个装饰器修饰,
 #   多个装饰器执行的顺序就是从第一个装饰器开始，执行到最后一个装饰器，再执行函数本身。 
 
-'''
-# python装饰器库 - functools
-from functools import wraps
-def decorator(func):
-    @wraps(func)
-    def inner_function():
-         print("inner_function...")
-    return inner_function
 
-@decorator
-def func():
-    print("func...")
-
-print(func.__name__)
-'''
 def decorator_a(func):
     return lambda: "<a> " + func() + " </a>"
 
@@ -36,4 +22,3 @@ def say():
     #print("hello...")
 
 print(say())
-
